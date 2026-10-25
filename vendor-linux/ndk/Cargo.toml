@@ -1,0 +1,81 @@
+[dependencies.bitflags]
+version = "2.0.0"
+
+[dependencies.ffi]
+package = "ndk-sys"
+version = "0.5.0"
+
+[dependencies.jni]
+optional = true
+version = "0.21"
+
+[dependencies.jni-sys]
+version = "0.3.0"
+
+[dependencies.log]
+version = "0.4"
+
+[dependencies.num_enum]
+version = "0.7"
+
+[dependencies.rwh_04]
+optional = true
+package = "raw-window-handle"
+version = "0.4"
+
+[dependencies.rwh_05]
+optional = true
+package = "raw-window-handle"
+version = "0.5"
+
+[dependencies.rwh_06]
+optional = true
+package = "raw-window-handle"
+version = "0.6"
+
+[dependencies.thiserror]
+version = "1.0.23"
+
+[dev-dependencies.libc]
+version = "0.2"
+
+[features]
+all = ["audio", "bitmap", "media", "api-level-31", "rwh_04", "rwh_05", "rwh_06"]
+api-level-23 = []
+api-level-24 = ["api-level-23"]
+api-level-25 = ["api-level-24"]
+api-level-26 = ["api-level-25"]
+api-level-27 = ["api-level-26"]
+api-level-28 = ["api-level-27"]
+api-level-29 = ["api-level-28"]
+api-level-30 = ["api-level-29"]
+api-level-31 = ["api-level-30"]
+audio = ["ffi/audio", "api-level-26"]
+bitmap = ["ffi/bitmap"]
+default = ["rwh_06"]
+media = ["ffi/media"]
+sync = ["ffi/sync", "api-level-26"]
+test = ["ffi/test", "jni", "all"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["The Rust Mobile contributors"]
+description = "Safe Rust bindings to the Android NDK"
+documentation = "https://docs.rs/ndk"
+edition = "2021"
+homepage = "https://github.com/rust-mobile/ndk"
+keywords = ["android", "ndk"]
+license = "MIT OR Apache-2.0"
+name = "ndk"
+readme = "README.md"
+repository = "https://github.com/rust-mobile/ndk"
+resolver = "1"
+rust-version = "1.66"
+version = "0.8.0"
+
+[package.metadata.docs.rs]
+features = ["jni", "all"]
+rustdoc-args = ["--cfg", "docsrs"]
+targets = ["aarch64-linux-android", "armv7-linux-androideabi", "i686-linux-android", "x86_64-linux-android"]

@@ -1,0 +1,23 @@
+[features]
+bionic-deprecated = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Mikhail Lappo <mikhail.lappo@esrlabs.com>"]
+categories = ["external-ffi-bindings", "os", "os::linux-apis"]
+description = "Rust-based Android properties wrapper"
+documentation = "https://docs.rs/android-properties/0.2.2"
+edition = "2018"
+exclude = [".travis.yml", "check.sh"]
+homepage = "https://github.com/miklelappo/android-properties"
+keywords = ["android", "properties", "cutils", "bionic", "persistent"]
+license = "MIT"
+name = "android-properties"
+readme = "README.md"
+repository = "https://github.com/miklelappo/android-properties"
+version = "0.2.2"
+
+[package.metadata.docs.rs]
+targets = ["arm-linux-androideabi", "armv7-linux-androideabi", "aarch64-linux-android", "i686-linux-android", "x86_64-unknown-linux-gnu"]

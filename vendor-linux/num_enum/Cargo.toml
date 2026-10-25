@@ -1,0 +1,51 @@
+[badges.maintenance]
+status = "passively-maintained"
+
+[dependencies.num_enum_derive]
+default-features = false
+version = "=0.7.6"
+
+[dependencies.rustversion]
+version = "1.0.4"
+
+[dev-dependencies.anyhow]
+version = "1.0.14"
+
+[dev-dependencies.paste]
+version = "1"
+
+[dev-dependencies.trybuild]
+version = "1.0.98"
+
+[dev-dependencies.walkdir]
+version = "2"
+
+[features]
+complex-expressions = ["num_enum_derive/complex-expressions"]
+default = ["std"]
+external_doc = []
+std = ["num_enum_derive/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Daniel Wagner-Hall <dawagner@gmail.com>", "Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>", "Vincent Esche <regexident@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+categories = ["rust-patterns"]
+description = "Procedural macros to make inter-operation between primitives and enums easier."
+edition = "2021"
+keywords = ["enum", "conversion", "safe", "ffi", "derive"]
+license = "BSD-3-Clause OR MIT OR Apache-2.0"
+name = "num_enum"
+readme = "README.md"
+repository = "https://github.com/illicitonion/num_enum"
+rust-version = "1.70.0"
+version = "0.7.6"
+
+[package.metadata.docs.rs]
+features = ["external_doc"]

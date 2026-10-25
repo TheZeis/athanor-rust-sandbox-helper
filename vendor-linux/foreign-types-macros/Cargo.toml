@@ -1,0 +1,30 @@
+[dependencies.proc-macro2]
+version = "1.0"
+
+[dependencies.quote]
+version = "1.0"
+
+[dependencies.syn]
+features = ["full"]
+version = "3.0"
+
+[features]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Steven Fackler <sfackler@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "An internal crate used by foreign-types"
+edition = "2018"
+license = "MIT/Apache-2.0"
+name = "foreign-types-macros"
+readme = false
+repository = "https://github.com/sfackler/foreign-types"
+version = "0.2.4"

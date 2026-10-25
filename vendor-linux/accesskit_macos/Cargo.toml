@@ -1,0 +1,29 @@
+[dependencies.accesskit]
+version = "0.12.1"
+
+[dependencies.accesskit_consumer]
+version = "0.16.1"
+
+[dependencies.objc2]
+version = ">=0.3.0-beta.3, <0.3.0-beta.4"
+
+[dependencies.once_cell]
+version = "1.13.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Matt Campbell <mattcampbell@pobox.com>"]
+categories = ["gui"]
+description = "AccessKit UI accessibility infrastructure: macOS adapter"
+edition = "2021"
+keywords = ["gui", "ui", "accessibility"]
+license = "MIT OR Apache-2.0"
+name = "accesskit_macos"
+readme = "README.md"
+repository = "https://github.com/AccessKit/accesskit"
+version = "0.10.1"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-apple-darwin"

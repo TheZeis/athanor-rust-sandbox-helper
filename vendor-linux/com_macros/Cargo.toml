@@ -1,0 +1,25 @@
+[dependencies.com_macros_support]
+version = "0.6"
+
+[dependencies.proc-macro2]
+version = "1.0"
+
+[dependencies.syn]
+features = ["full"]
+version = "1.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Microsoft Corp."]
+autotests = false
+description = """
+COM crate macros
+"""
+edition = "2018"
+keywords = ["windows", "ffi", "com", "macros"]
+license = "MIT"
+name = "com_macros"
+repository = "https://github.com/microsoft/com-rs"
+version = "0.6.0"

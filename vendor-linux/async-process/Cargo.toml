@@ -1,0 +1,50 @@
+[dependencies.async-lock]
+version = "2.6.0"
+
+[dependencies.cfg-if]
+version = "1.0"
+
+[dependencies.event-listener]
+version = "3.0.0"
+
+[dependencies.futures-lite]
+version = "1.11.0"
+
+[dev-dependencies.async-io]
+version = "1.8"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Stjepan Glavina <stjepang@gmail.com>"]
+categories = ["asynchronous", "os"]
+description = "Async interface for working with processes"
+edition = "2018"
+exclude = ["/.*"]
+keywords = ["process", "spawn", "command", "subprocess", "child"]
+license = "Apache-2.0 OR MIT"
+name = "async-process"
+readme = "README.md"
+repository = "https://github.com/smol-rs/async-process"
+rust-version = "1.63"
+version = "1.8.1"
+
+[target."cfg(unix)".dependencies.async-io]
+version = "1.8"
+
+[target."cfg(unix)".dependencies.async-signal]
+version = "0.2.3"
+
+[target."cfg(unix)".dependencies.rustix]
+default-features = false
+features = ["std", "fs"]
+version = "0.38"
+
+[target."cfg(windows)".dependencies.blocking]
+version = "1.0.0"
+
+[target."cfg(windows)".dependencies.windows-sys]
+default-features = false
+features = ["Win32_Foundation", "Win32_System_Threading"]
+version = "0.48"

@@ -1,0 +1,14 @@
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["The Rust Windowing contributors"]
+description = "Handles for accessing Android APIs"
+documentation = "https://docs.rs/ndk-context"
+edition = "2021"
+homepage = "https://github.com/rust-windowing/android-ndk-rs"
+keywords = ["android", "ndk", "apk", "jni"]
+license = "MIT OR Apache-2.0"
+name = "ndk-context"
+repository = "https://github.com/rust-windowing/android-ndk-rs"
+version = "0.1.1"

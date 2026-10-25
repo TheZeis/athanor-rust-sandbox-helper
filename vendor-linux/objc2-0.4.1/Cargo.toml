@@ -1,0 +1,68 @@
+[dependencies.malloc_buf]
+optional = true
+version = "1.0"
+
+[dependencies.objc-sys]
+default-features = false
+version = "0.3.1"
+
+[dependencies.objc2-encode]
+default-features = false
+version = "3.0.0"
+
+[dependencies.objc2-proc-macros]
+optional = true
+version = "0.1.1"
+
+[dev-dependencies.iai]
+version = "0.1"
+
+[dev-dependencies.static_assertions]
+version = "1.1.0"
+
+[features]
+alloc = ["objc2-encode/alloc", "objc-sys/alloc"]
+apple = ["objc-sys/apple"]
+catch-all = ["exception"]
+default = ["std", "apple"]
+exception = ["objc-sys/unstable-exception"]
+gnustep-1-7 = ["objc-sys/gnustep-1-7"]
+gnustep-1-8 = ["gnustep-1-7", "objc-sys/gnustep-1-8"]
+gnustep-1-9 = ["gnustep-1-8", "objc-sys/gnustep-1-9"]
+gnustep-2-0 = ["gnustep-1-9", "objc-sys/gnustep-2-0"]
+gnustep-2-1 = ["gnustep-2-0", "objc-sys/gnustep-2-1"]
+malloc = ["malloc_buf"]
+relax-void-encoding = []
+std = ["alloc", "objc2-encode/std", "objc-sys/std"]
+unstable-apple-new = ["apple"]
+unstable-autoreleasesafe = []
+unstable-c-unwind = []
+unstable-compiler-rt = ["apple"]
+unstable-docsrs = []
+unstable-static-class = ["objc2-proc-macros"]
+unstable-static-class-inlined = ["unstable-static-class"]
+unstable-static-sel = ["objc2-proc-macros"]
+unstable-static-sel-inlined = ["unstable-static-sel"]
+verify = ["malloc"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Steven Sheldon", "Mads Marquart <mads@marquart.dk>"]
+categories = ["api-bindings", "development-tools::ffi", "os::macos-apis"]
+description = "Objective-C interface and runtime bindings"
+documentation = "https://docs.rs/objc2/"
+edition = "2021"
+keywords = ["objective-c", "macos", "ios", "objc_msgSend", "objc"]
+license = "MIT"
+name = "objc2"
+readme = "README.md"
+repository = "https://github.com/madsmtm/objc2"
+rust-version = "1.60"
+version = "0.4.1"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-apple-darwin"
+features = ["exception", "malloc", "unstable-docsrs"]
+targets = ["x86_64-apple-darwin", "aarch64-apple-darwin", "aarch64-apple-ios", "x86_64-apple-ios", "x86_64-unknown-linux-gnu", "i686-unknown-linux-gnu", "x86_64-pc-windows-msvc"]

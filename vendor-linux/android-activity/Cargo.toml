@@ -1,0 +1,65 @@
+[build-dependencies.cc]
+features = ["parallel"]
+version = "1.0"
+
+[dependencies.android-properties]
+version = "0.2"
+
+[dependencies.bitflags]
+version = "2.0"
+
+[dependencies.cesu8]
+version = "1"
+
+[dependencies.jni]
+version = "0.21"
+
+[dependencies.jni-sys]
+version = "0.3"
+
+[dependencies.libc]
+version = "0.2"
+
+[dependencies.log]
+version = "0.4"
+
+[dependencies.ndk]
+default-features = false
+version = "0.8.0"
+
+[dependencies.ndk-context]
+version = "0.1"
+
+[dependencies.ndk-sys]
+version = "0.5.0"
+
+[dependencies.num_enum]
+version = "0.7"
+
+[dependencies.thiserror]
+version = "1"
+
+[features]
+default = []
+game-activity = []
+native-activity = []
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+description = "Glue for building Rust applications on Android with NativeActivity or GameActivity"
+documentation = "https://docs.rs/android-activity"
+edition = "2021"
+homepage = "https://github.com/rust-mobile/android-activity"
+keywords = ["android", "ndk"]
+license = "MIT OR Apache-2.0"
+name = "android-activity"
+readme = "README.md"
+repository = "https://github.com/rust-mobile/android-activity"
+rust-version = "1.68.0"
+version = "0.5.2"
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--cfg", "docsrs"]
+targets = ["aarch64-linux-android", "armv7-linux-androideabi", "i686-linux-android", "x86_64-linux-android"]

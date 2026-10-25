@@ -1,0 +1,40 @@
+[dependencies.block-sys]
+default-features = false
+version = "0.2.0"
+
+[dependencies.objc2]
+default-features = false
+version = "0.4.1"
+
+[features]
+alloc = ["objc2/alloc", "block-sys/alloc"]
+apple = ["block-sys/apple", "objc2/apple"]
+compiler-rt = ["block-sys/compiler-rt", "objc2/unstable-compiler-rt"]
+default = ["std", "apple"]
+gnustep-1-7 = ["block-sys/gnustep-1-7", "objc2/gnustep-1-7"]
+gnustep-1-8 = ["gnustep-1-7", "block-sys/gnustep-1-8", "objc2/gnustep-1-8"]
+gnustep-1-9 = ["gnustep-1-8", "block-sys/gnustep-1-9", "objc2/gnustep-1-9"]
+gnustep-2-0 = ["gnustep-1-9", "block-sys/gnustep-2-0", "objc2/gnustep-2-0"]
+gnustep-2-1 = ["gnustep-2-0", "block-sys/gnustep-2-1", "objc2/gnustep-2-1"]
+std = ["alloc", "objc2/std", "block-sys/std"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Steven Sheldon", "Mads Marquart <mads@marquart.dk>"]
+categories = ["api-bindings", "development-tools::ffi", "os::macos-apis"]
+description = "Apple's C language extension of blocks"
+documentation = "https://docs.rs/block2/"
+edition = "2021"
+keywords = ["objective-c", "macos", "ios", "blocks"]
+license = "MIT"
+name = "block2"
+readme = "README.md"
+repository = "https://github.com/madsmtm/objc2"
+rust-version = "1.60"
+version = "0.3.0"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-apple-darwin"
+targets = ["x86_64-apple-darwin", "aarch64-apple-darwin", "aarch64-apple-ios", "x86_64-apple-ios", "x86_64-unknown-linux-gnu", "i686-unknown-linux-gnu", "x86_64-pc-windows-msvc"]

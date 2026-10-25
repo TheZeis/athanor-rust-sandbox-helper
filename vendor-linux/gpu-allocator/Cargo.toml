@@ -1,0 +1,79 @@
+[dependencies.ash]
+default-features = false
+features = ["debug"]
+optional = true
+version = ">=0.34, <=0.37"
+
+[dependencies.egui]
+default-features = false
+optional = true
+version = "0.24"
+
+[dependencies.egui_extras]
+default-features = false
+optional = true
+version = "0.24"
+
+[dependencies.log]
+version = "0.4"
+
+[dependencies.presser]
+version = "0.3"
+
+[dependencies.thiserror]
+version = "1.0"
+
+[dev-dependencies.ash]
+default-features = false
+features = ["debug", "loaded"]
+version = ">=0.34,<=0.37"
+
+[dev-dependencies.env_logger]
+version = "0.10"
+
+[features]
+d3d12 = ["windows"]
+default = ["d3d12", "vulkan"]
+public-winapi = ["dep:winapi"]
+visualizer = ["egui", "egui_extras"]
+vulkan = ["ash"]
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Traverse Research <opensource@traverseresearch.nl>"]
+categories = ["rendering", "rendering::graphics-api"]
+description = "Memory allocator for GPU memory in Vulkan and DirectX 12"
+documentation = "https://docs.rs/gpu-allocator/"
+edition = "2021"
+homepage = "https://github.com/Traverse-Research/gpu-allocator"
+include = ["/README.md", "/LICENSE-*", "/src", "/examples"]
+keywords = ["vulkan", "memory", "allocator"]
+license = "MIT OR Apache-2.0"
+name = "gpu-allocator"
+readme = "README.md"
+repository = "https://github.com/Traverse-Research/gpu-allocator"
+rust-version = "1.65"
+version = "0.25.0"
+
+[package.metadata.docs.rs]
+all-features = true
+
+[target."cfg(windows)".dependencies.winapi]
+features = ["d3d12", "winerror", "impl-default", "impl-debug"]
+optional = true
+version = "0.3.9"
+
+[target."cfg(windows)".dependencies.windows]
+features = ["Win32_Foundation", "Win32_Graphics", "Win32_Graphics_Direct3D", "Win32_Graphics_Direct3D12", "Win32_Graphics_Dxgi", "Win32_Graphics_Dxgi_Common"]
+optional = true
+version = ">=0.51,<=0.52"
+
+[target."cfg(windows)".dev-dependencies.winapi]
+features = ["d3d12", "d3d12sdklayers", "dxgi1_6", "winerror", "impl-default", "impl-debug", "winuser", "windowsx", "libloaderapi"]
+version = "0.3.9"
+
+[target."cfg(windows)".dev-dependencies.windows]
+features = ["Win32_Foundation", "Win32_Graphics", "Win32_Graphics_Direct3D", "Win32_Graphics_Direct3D12", "Win32_Graphics_Dxgi", "Win32_Graphics_Dxgi_Common"]
+version = ">=0.51,<=0.52"

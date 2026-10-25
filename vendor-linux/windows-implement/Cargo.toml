@@ -1,0 +1,27 @@
+[dependencies.proc-macro2]
+version = "1.0"
+
+[dependencies.quote]
+version = "1.0"
+
+[dependencies.syn]
+default-features = false
+features = ["parsing", "proc-macro", "printing", "full", "derive"]
+version = "1.0"
+
+[lib]
+path = "src/lib.rs"
+
+[package]
+authors = ["Microsoft"]
+description = "The implement macro for the windows crate"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+name = "windows-implement"
+repository = "https://github.com/microsoft/windows-rs"
+rust-version = "1.64"
+version = "0.48.0"
+
+[package.metadata.docs.rs]
+default-target = "x86_64-pc-windows-msvc"
+targets = []

@@ -1,0 +1,37 @@
+[badges.maintenance]
+status = "actively-developed"
+
+[badges.travis-ci]
+repository = "vorner/signal-hook"
+
+[dependencies.errno]
+version = ">=0.2, <0.4"
+
+[dependencies.libc]
+version = "^0.2"
+
+[dev-dependencies.signal-hook]
+version = "~0.3"
+
+[lib]
+path = "src/lib.rs"
+
+[lints.clippy]
+unnecessary_clippy_cfg = "allow"
+
+[package]
+authors = ["Michal 'vorner' Vaner <vorner@vorner.cz>", "Masaki Hara <ackie.h.gmai@gmail.com>"]
+autobenches = false
+autobins = false
+autoexamples = false
+autolib = false
+autotests = false
+description = "Backend crate for signal-hook"
+documentation = "https://docs.rs/signal-hook-registry"
+keywords = ["signal", "unix", "daemon"]
+license = "MIT OR Apache-2.0"
+name = "signal-hook-registry"
+readme = "README.md"
+repository = "https://github.com/vorner/signal-hook"
+rust-version = "1.26"
+version = "1.4.8"
